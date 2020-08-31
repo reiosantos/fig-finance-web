@@ -1,4 +1,4 @@
-import { Action, LoadingState } from '../shared/interface';
+import { Action, LoadingState } from '../../shared/interface';
 
 const loadingReducer = (state: LoadingState = { api: {} }, action: Action): LoadingState => {
   const { type } = action;

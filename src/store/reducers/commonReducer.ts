@@ -1,27 +1,27 @@
-import { Action, CommonState } from '../shared/interface';
-import actionTypes from './action-types';
+import { Action, CommonState, NotificationType } from '../../shared/interface';
+import actionTypes from '../action-types';
 
 const initialState: CommonState = {
-  modalStatus: {
-    isModalOpen: false,
-    action: ''
-  },
   notification: {
     message: '',
-    type: ''
+    type: NotificationType.INFO
+  },
+  loader: {
+    success: false,
+    loading: false
   }
 };
 
 const commonReducer = (state: CommonState = initialState, action: Action): CommonState => {
   switch (action.type) {
-    case actionTypes.OPEN_MODAL:
-      return { ...state, modalStatus: { isModalOpen: true, action: action.payload || '' } };
-    case actionTypes.CLOSE_MODAL:
-      return { ...state, modalStatus: { isModalOpen: false, action: '' } };
     case actionTypes.RESET_NOTIFICATION:
-      return { ...state, notification: { message: '', type: '' } };
+      return { ...state, notification: { message: '', type: NotificationType.INFO } };
     case actionTypes.SET_NOTIFICATION:
       return { ...state, notification: action.payload };
+    case actionTypes.SHOW_LOADER:
+      return { ...state, loader: { loading: true, success: false } };
+    case actionTypes.HIDE_LOADER:
+      return { ...state, loader: { loading: false, success: true } };
     default: {
       const { type } = action;
       const matches = /(.*)_(SUCCESS|FAIL)/.exec(type);
@@ -34,9 +34,13 @@ const commonReducer = (state: CommonState = initialState, action: Action): Commo
       }
       return {
         ...state,
+        loader: {
+          success: requestState === 'SUCCESS',
+          loading: false
+        },
         notification: {
           message: action.payload.message,
-          type: requestState === 'SUCCESS' ? 'success' : 'error'
+          type: requestState === 'SUCCESS' ? NotificationType.SUCCESS : NotificationType.ERROR
         }
       };
     }

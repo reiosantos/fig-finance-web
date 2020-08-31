@@ -1,4 +1,5 @@
 import React from 'react';
+import ServerError from '../errors/500';
 
 class ErrorBoundary extends React.Component<any, any> {
   state = {
@@ -23,7 +24,8 @@ class ErrorBoundary extends React.Component<any, any> {
 
   render() {
     if (this.state.error) {
-      return 'Application has errors. Please check logs to fix this';
+      this.logError(this.state.error);
+      return <ServerError/>;
     }
     return this.props.children;
   }

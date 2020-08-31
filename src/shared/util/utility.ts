@@ -1,19 +1,12 @@
 import moment from 'moment';
 import { ThunkDispatch } from 'redux-thunk';
 import actionTypes from '../../store/action-types';
-import { Action, ModalStateProps, NotificationStateProps, State } from '../interface';
+import { Action, NotificationStateProps, NotificationType, State } from '../interface';
 
 const createAction = (ACTION: string, data: any = null): Action => {
   return {
     type: ACTION,
     payload: data
-  };
-};
-
-const getModalStateProps = (dispatch: ThunkDispatch<{}, {}, Action>): ModalStateProps => {
-  return {
-    openModal: action => dispatch(createAction(actionTypes.OPEN_MODAL, action)),
-    closeModal: () => dispatch(createAction(actionTypes.CLOSE_MODAL))
   };
 };
 
@@ -24,6 +17,13 @@ const getNotificationProps = (dispatch: ThunkDispatch<{}, {}, Action>): Notifica
         createAction(actionTypes.SET_NOTIFICATION, {
           message,
           type
+        })
+      ),
+    resetNotification: () =>
+      dispatch(
+        createAction(actionTypes.RESET_NOTIFICATION, {
+          message: '',
+          type: NotificationType.INFO
         })
       )
   };
@@ -65,11 +65,10 @@ const debounce = (func: any, wait = 400) => {
 
 const Utility = {
   createAction,
-  getModalStateProps,
   createLoadingSelector,
+  getNotificationProps,
   formatDate,
-  debounce,
-  getNotificationProps
+  debounce
 };
 
 export default Utility;

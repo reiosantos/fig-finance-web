@@ -1,12 +1,12 @@
-import axios, { AxiosError, AxiosResponse } from 'axios';
+import axios, { AxiosError, AxiosInstance, AxiosResponse, Method } from 'axios';
 import { ResponseObj } from '../interface';
-import AuthService from './auth.service';
 import { getUrl } from '../constants/constants';
+import Storage from '../util/storage';
 
-const axiosInstance = axios.create();
+const axiosInstance: AxiosInstance = axios.create();
 
 export interface AxiosParams {
-  method: string;
+  method: Method;
   url: string;
   data?: any;
   contentType?: string;
@@ -83,14 +83,11 @@ const patch = (url: string, params: any = {}, otherData: MiscellaneousRequestPar
  * @param object containing method, url, data, access token, content-type
  */
 const commonAxios = ({
-  method,
-  url,
-  data,
-  contentType = 'application/json',
-  headers = {}
-}: AxiosParams): Promise<any> => {
+                       method, url, data, contentType = 'application/json', headers = {}
+                     }: AxiosParams
+): Promise<any> => {
   headers['Content-Type'] = contentType;
-  const token = AuthService.getAccessToken();
+  const token = Storage.getAccessToken();
   if (token) {
     headers.authorization = `JWT ${token}`;
   }
@@ -101,12 +98,7 @@ const commonAxios = ({
     body = data;
   }
   return new Promise((resolve, reject) => {
-    axiosInstance({
-      method,
-      url,
-      headers,
-      data: body
-    })
+    axiosInstance({ method, url, headers, data: body })
       .then((response: AxiosResponse<ResponseObj<any>>) => {
         /**
          * sample JSON response :

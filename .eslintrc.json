@@ -345,6 +345,7 @@
           "arguments": 1
         }
       }
-    ]
+    ],
+    "semi": "error"
   }
 }

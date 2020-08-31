@@ -1,14 +1,12 @@
-import Head from 'next/head';
 import React from 'react';
+import { Button } from '@material-ui/core';
 
 const Layout = ({ children }: any) => {
   return (
-    <div className="container">
-      <Head>
-        <title>Create Next App</title>
-        <link href="/favicon.png" rel="icon" type="image/png" />
-      </Head>
-
+    <div className="wrapper">
+      <Button variant="contained" color="primary">
+        Hello World
+      </Button>
       <main>{children}</main>
 
       <footer>
@@ -17,7 +15,7 @@ const Layout = ({ children }: any) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by <img src="/zeit.svg" alt="ZEIT Logo" />
+          Powered by <img src="/zeit.svg" alt="ZEIT Logo"/>
         </a>
       </footer>
     </div>
