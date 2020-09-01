@@ -42,15 +42,30 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           {/* PWA primary color */}
-          <meta name="theme-color" content={AppTheme.palette.primary.main}/>
           <meta charSet="utf-8"/>
+          <meta httpEquiv='X-UA-Compatible' content='IE=edge'/>
+          <link rel="manifest" href="/manifest.json"/>
+          <meta name="mobile-web-app-capable" content="yes"/>
+          <meta name="apple-mobile-web-app-capable" content="yes"/>
+          <meta name="application-name" content="NJS Tmpl"/>
+          <meta name="apple-mobile-web-app-title" content="NJS Tmpl"/>
+          <meta name="theme-color" content={AppTheme.palette.primary.main}/>
+          <meta name="msapplication-navbutton-color" content={AppTheme.palette.primary.main}/>
+          <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+          <meta name="msapplication-starturl" content="/"/>
+          <meta name='description' content='Nest JS Template Descrition'/>
+          <meta name='keywords' content='Template, San'/>
+          <link href='/icons/logo.png' rel='icon' type='image/png' sizes='16x16'/>
+          <link href='/icons/logo.png' rel='icon' type='image/png' sizes='32x32'/>
+          <link rel='apple-touch-icon' href='/icons/apple-icon.png'/>
+
           <link
-            rel="stylesheet"
+            rel="preload" crossOrigin="anonymous"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
-          <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
-          <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
-          <link href="/favicon.png" rel="icon" type="image/png"/>
+          <link rel="preload" crossOrigin="anonymous"
+                href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+          <link href="/icons/favicon.ico" rel="icon" type="image/png"/>
         </Head>
         <body>
         <Main/>

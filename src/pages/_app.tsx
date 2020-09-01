@@ -32,7 +32,9 @@ class MyApp extends App {
       <>
         <Head>
           <title>NextJS Template</title>
-          <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width"/>
+          <meta
+            name="viewport"
+            content="minimum-scale=1, initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no, shrink-to-fit=no"/>
         </Head>
         <StylesProvider injectFirst>
           <MuiThemeProvider theme={AppTheme}>

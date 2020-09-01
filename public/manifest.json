@@ -1,0 +1,11 @@
+{
+  "name": "NextJS Template",
+  "short_name": "NJS Tmpl",
+  "lang": "en-US",
+  "start_url": "/",
+  "display": "browser",
+  "orientation": "any",
+  "theme_color": "#2a3f54",
+  "background_color": "#ffffff",
+  "scope": "/"
+}

@@ -57,3 +57,4 @@ build/
 src/assets/styles/index.css
 !public/*
 !public/fonts/*
+*.map
