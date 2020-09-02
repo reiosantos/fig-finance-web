@@ -5,9 +5,18 @@ import { connect } from 'react-redux';
 
 function Dashboard() {
   return (
-    <h1 className="text-green font-medium text-large text-center w-full">
-      Welcome to <a href="https://nextjs.org">Next.js!</a>
-    </h1>
+    <React.Fragment>
+      <h1 className="text-green font-medium text-large text-center w-full">
+        Welcome to <a href="/">Your Dashboard!</a>
+      </h1>
+      <h2 className="font-medium text-blue">
+        Start by designing your layout in: <code>src/shared/components/layout/index.tsx</code>
+      </h2>
+      <h3>
+        You can utilize both Material-UI and Styled components,
+        both are configured for you consumption.
+      </h3>
+    </React.Fragment>
   );
 }
 

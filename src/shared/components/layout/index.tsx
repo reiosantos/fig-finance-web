@@ -1,12 +1,8 @@
 import React from 'react';
-import { Button } from '@material-ui/core';
 
 const Layout = ({ children }: any) => {
   return (
     <div className="wrapper">
-      <Button variant="contained" color="primary">
-        Hello World
-      </Button>
       <main>{children}</main>
 
       <footer>
