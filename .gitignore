@@ -57,3 +57,5 @@ src/assets/styles/index.css
 !public/*
 !public/fonts/*
 *.map
+public/sw.js*
+public/workbox-*.js*
