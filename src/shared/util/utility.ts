@@ -59,6 +59,7 @@ const debounce = (func: any, wait = 400) => {
   let h: NodeJS.Timeout;
   return (...args: any[]) => {
     clearTimeout(h);
+    // @ts-ignore
     h = setTimeout(() => func(...args), wait);
   };
 };

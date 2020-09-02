@@ -1,0 +1,27 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "sourceMap": true,
+    "target": "ES2015",
+    "module": "CommonJS",
+    "inlineSources": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "lib": [
+      "dom",
+      "es6"
+    ],
+    "jsx": "react",
+    "types": [
+      "node",
+      "jest"
+    ]
+  },
+  "include": [
+    "tests/**/*",
+    "typings/**/*"
+  ],
+  "exclude": [
+    "src/**/*"
+  ]
+}
