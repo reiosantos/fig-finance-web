@@ -1,7 +1,6 @@
 import React from 'react';
 import App from 'next/app';
 import '../assets/styles/index.css';
-import 'react-toastify/dist/ReactToastify.css';
 import 'react-phone-input-2/lib/style.css';
 import { Provider } from 'react-redux';
 import ErrorBoundary from '../shared/components/errorBoundary/errorBoundary';

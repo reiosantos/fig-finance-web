@@ -66,6 +66,14 @@ export default class MyDocument extends Document {
           <link rel="preload" crossOrigin="anonymous"
                 href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
           <link href="/icons/favicon.ico" rel="icon" type="image/png"/>
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+            crossOrigin="anonymous"
+            referrerPolicy="no-referrer"
+          />
+          <link href="/favicon.ico" rel="icon" type="image/png" />
         </Head>
         <body>
         <Main/>

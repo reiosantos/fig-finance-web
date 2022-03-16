@@ -1,5 +1,7 @@
 import { red } from '@material-ui/core/colors';
-import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
+import { unstable_createMuiStrictModeTheme as createMuiTheme } from '@material-ui/core';
+
+const primary = '#CA5050';
 
 const AppTheme = createMuiTheme({
   typography: {
@@ -18,7 +20,7 @@ const AppTheme = createMuiTheme({
       contrastText: '#fff'
     },
     primary: {
-      main: '#2a3f54',
+      main: primary,
       contrastText: '#fff'
     },
     error: {
@@ -26,7 +28,7 @@ const AppTheme = createMuiTheme({
       main: red[500],
       dark: red[500]
     }
-  }
+  },
 });
 
 export default AppTheme;

@@ -1,4 +1,4 @@
-import moment from 'moment';
+import * as dateFns from 'date-fns';
 import { ThunkDispatch } from 'redux-thunk';
 import actionTypes from '../../store/action-types';
 import { Action, NotificationStateProps, NotificationType, State } from '../interface';
@@ -50,9 +50,7 @@ const formatDate = (date: any, format?: string) => {
   if (!date) {
     return '';
   }
-  return moment(date)
-    .local()
-    .format(format || 'YYYY-MM-DD HH:mm:ss');
+  return dateFns.format(new Date(date), format || 'yyyy-MM-dd HH:mm:ss');
 };
 
 const debounce = (func: any, wait = 400) => {

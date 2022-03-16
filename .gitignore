@@ -59,3 +59,9 @@ src/assets/styles/index.css
 *.map
 public/sw.js*
 public/workbox-*.js*
+.next/
+
+report.*.json
+**/.DS_Store
+core
+!.env.example

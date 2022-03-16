@@ -16,7 +16,19 @@
     "prettier/@typescript-eslint",
     "plugin:prettier/recommended",
     "react-app",
+    "react-app/jest",
     "plugin:react/recommended"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "**/*.spec.{ts,tsx}"
+      ],
+      "extends": [
+        "plugin:jest/recommended",
+        "plugin:jest/style"
+      ]
+    }
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -93,6 +105,7 @@
     "@typescript-eslint/no-namespace": "error",
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-parameter-properties": "off",
+    "@typescript-eslint/no-shadow": ["error"],
     "@typescript-eslint/no-this-alias": "off",
     "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
     "@typescript-eslint/no-unsafe-assignment": "off",
@@ -111,6 +124,7 @@
       "single"
     ],
     "@typescript-eslint/restrict-template-expressions": "off",
+    "@typescript-eslint/require-await": "off",
     "@typescript-eslint/semi": [
       "error",
       "always"
@@ -159,7 +173,7 @@
       1
     ],
     "react/jsx-no-bind": [
-      1
+      0
     ],
     "react/jsx-fragments": [
       1,
@@ -258,7 +272,7 @@
       "rxjs/Rx"
     ],
     "no-shadow": [
-      "error",
+      "off",
       {
         "hoist": "all"
       }
