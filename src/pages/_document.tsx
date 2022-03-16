@@ -53,7 +53,7 @@ export default class MyDocument extends Document {
           <meta name="msapplication-navbutton-color" content={AppTheme.palette.primary.main}/>
           <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
           <meta name="msapplication-starturl" content="/"/>
-          <meta name='description' content='Nest JS Template Descrition'/>
+          <meta name='description' content='Nest JS Web Descrition'/>
           <meta name='keywords' content='Template, San'/>
           <link href='/icons/logo.png' rel='icon' type='image/png' sizes='16x16'/>
           <link href='/icons/logo.png' rel='icon' type='image/png' sizes='32x32'/>

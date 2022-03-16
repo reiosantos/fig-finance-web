@@ -1,1 +1,1 @@
-## Next JS React Template
+## Next JS React Web
