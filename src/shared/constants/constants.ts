@@ -10,6 +10,7 @@ const API_CONFIG = {
   PATH: {
     LOGIN: `${prefix}/user/login`,
     JWT_LOGIN: `${prefix}jwt/login`,
+    EVENTS: `${prefix}events/recommendations`,
   }
 };
 
